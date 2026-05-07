@@ -1,1 +1,1 @@
-Logging My backend learnings. 
+Logging backend learnings. 
