@@ -1,12 +1,16 @@
 // Creating server 
 const express = require("express") // requiring express 
 const app = express() // storing express call inside app variable
-// const port = 3000 // declaring port number 
-// app.listen(port) // listening app on declared port 
-app.use(express.json()) //middleware, read the data 
-const notes =[]
-app.post('/notes', (req, res)=>{
-const Note = req.body // storing notes body inside Note variable
-notes.push(Note)
+app.use(express.json())
+const Notes = []
+app.post('/notes',(req, res) =>{
+    console.log(req.body)
+const Note = req.body
+Notes.push(Note)
+ res.status(201).json({
+    message: "note created successfully"
+ })
 })
-module.exports = app // exporting the created code incase to be imported by another file. 
+module.exports = app 
+// exporting the created code incase to be imported by another file. node
+
