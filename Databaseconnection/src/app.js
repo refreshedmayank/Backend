@@ -16,10 +16,23 @@ app.post('/notes',async(req, res)=>{
 // api to get the data 
 app.get('/notes', async(req, res)=>{
    const Notes = await Data.find()
+// findone method find specific items in database 
+   //    const Notes = await Data.findOne({
+//     title: "This is the title im looking for "
+//    })
    res.status(200).json({
     "Message": "The Data has been fetched",
     "Notes": Notes
    })
 })
-
+// api to delete data inside data base 
+app.delete('/notes/:id', async(req, res)=>{
+     const ID = req.params.id
+   await Data.findOneAndDelete({
+        _id: ID
+     })
+     res.status(200).json({
+        message: "Data is deleted succesfully"
+     })
+})
 module.exports = app
