@@ -35,4 +35,13 @@ app.delete('/notes/:id', async(req, res)=>{
         message: "Data is deleted succesfully"
      })
 })
+// api to update the data inside database
+app.patch('/notes/:id', async(req, res)=>{
+    const ID = req.params.id
+    const description = req.body.description
+    await Data.findOneAndReplace({_id: ID},{description: description})
+    res.status(200).json({
+        "Message": "Updated succesfulyy"
+    })
+})
 module.exports = app
