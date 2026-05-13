@@ -4,4 +4,5 @@ const Dataschema = new mongoose.Schema({
     "title": String,
     "description": String
 })
-const Data = new mongoose.model(Data, Dataschema)
+const Data = mongoose.model("Data", Dataschema)
+module.exports = Data;
