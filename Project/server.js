@@ -4,5 +4,5 @@ const Db_connection = require('./src/Database/Database')
 Db_connection()
 const port = 3000
 app.listen(port,()=>{
-    console.log("The server has been started at port and has been connected to database")
+    console.log(`The server has been started at ${port} and has been connected to database`)
 })

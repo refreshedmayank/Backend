@@ -1,6 +1,7 @@
+require("dotenv").config()
 const mongoose = require('mongoose')
 async function Db_connect(){
-    await mongoose.connect("mongodb+srv://refreshedmayank_db_user:ndFUyEGMpq6Be2dy@cluster0.f7vkhcs.mongodb.net/Project")
+    await mongoose.connect(process.env.MONGODB_URI)
 }
 module.exports = Db_connect;
 
